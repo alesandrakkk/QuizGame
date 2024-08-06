@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuizQuestions>
+    <QuizQuestion>
+        <Question>Unity is ...</Question>
+        <CorrectAnswer>game engine</CorrectAnswer>
+        <WrongAnswers>
+            <Answer>tree</Answer>
+            <Answer>car</Answer>
+            <Answer>bike</Answer>
+        </WrongAnswers>
+    </QuizQuestion>
+    <QuizQuestion>
+        <Question>Star Wars IV Date</Question>
+        <CorrectAnswer>1977</CorrectAnswer>
+        <WrongAnswers>
+            <Answer>1980</Answer>
+            <Answer>1966</Answer>
+        </WrongAnswers>
+    </QuizQuestion>
+    <QuizQuestion>
+        <Question>How many Oceans?</Question>
+        <CorrectAnswer>4</CorrectAnswer>
+        <WrongAnswers>
+            <Answer>3</Answer>
+            <Answer>2</Answer>
+            <Answer>1</Answer>
+        </WrongAnswers>
+    </QuizQuestion>
+</QuizQuestions>

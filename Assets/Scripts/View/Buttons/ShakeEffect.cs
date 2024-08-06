@@ -12,13 +12,13 @@ namespace View
         [SerializeField] private int vibrato = 10;
         [SerializeField] private float elasticity = 1f;
         [SerializeField] private bool snapping = true;
-        [SerializeField] private Image imageColor;
+        //[SerializeField] private Image imageColor;
       
         public void Notify(bool correct)
         {
             if(!snapping || correct)
             {
-                imageColor.DOColor(Color.green, duration).SetLoops(-1, LoopType.Yoyo);
+                //imageColor.DOColor(Color.green, duration).SetLoops(-1, LoopType.Yoyo);
      
                 return;
             }
@@ -26,7 +26,7 @@ namespace View
             transform.DOKill();
             transform.DOPunchPosition(punch, duration, vibrato, elasticity, false);
 
-            imageColor.DOColor(Color.red, duration).SetLoops(-1, LoopType.Yoyo);
+            //imageColor.DOColor(Color.red, duration).SetLoops(-1, LoopType.Yoyo);
                        
         }
 
