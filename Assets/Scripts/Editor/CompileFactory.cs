@@ -20,12 +20,16 @@ namespace Compiles
                  new ExtentionFolderCompileFactory(
                     new AABCompileFactory(),
                     ".aab"
-                    )
-                    ).Compile(
+                    ),
+                 new ExtentionFolderCompileFactory(
+                     new WebGlCompileFactory(),
+                     ".html"
+                     )
+            ).Compile(
                     EditorUtility.OpenFolderPanel(
                         "Choose Folder", "Assets", "Build"
                         ), BuildOptions()
-                );
+            );
         }
 
         public static BuildOptions BuildOptions()
