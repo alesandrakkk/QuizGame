@@ -7,6 +7,7 @@ using System.Collections;
 using Uitls;
 using UnityEngine;
 using View;
+using LeaderBoard.View;
 
 
 public class EntryPoint : MonoBehaviour
@@ -14,14 +15,18 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private QuizView quizView = null!;
     [SerializeField] private Timer timer = null!;
     [SerializeField] private Attempts attempts = null!;
+    [SerializeField] private SubmitLeaderView submitLeaderView = null!;
     [SerializeField] private float rewardTime = 2;
     [SerializeField] private float suspendNextQuestionSeconds = 1;
+
 
 
     private IEnumerator Start()
     {
         timer.EnsureNotNull();
         attempts.EnsureNotNull();
+
+        submitLeaderView.StartAndHide();
 
         var waitFail = WaitFail(
             new IFail.Any(
@@ -53,11 +58,18 @@ public class EntryPoint : MonoBehaviour
 
             if (fail.Failed)
             {
+                submitLeaderView.StopAndShow();
                 print("Game failed");
                 break;
             }
 
             yield return new WaitForSeconds(suspendNextQuestionSeconds);
+        }
+
+        if (!fail.Failed)
+        {
+            submitLeaderView.StopAndShow();
+            print("Game win");
         }
 
         quizView.gameObject.SetActive(false);
